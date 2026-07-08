@@ -31,6 +31,6 @@ npm run verify
 npm run build
 ```
 
-## 포트폴리오 포인트
+## 프로젝트 포인트
 
 DefectRail FE는 Inspection AI 결과를 단순 로그가 아니라 lot, machine, defect type, time 축으로 탐색하는 제품 화면으로 구성했습니다. 백엔드가 꺼져 있어도 데모 데이터로 UI 흐름을 확인할 수 있습니다.
