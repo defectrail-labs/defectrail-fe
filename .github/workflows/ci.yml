@@ -22,14 +22,9 @@ jobs:
         with:
           submodules: recursive
       - uses: pnpm/action-setup@v4
-<<<<<<< Updated upstream
         if: ${{ hashFiles('package.json') != '' }}
         with:
-          version: 10
-=======
-        with:
           version: 11.7.0
->>>>>>> Stashed changes
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -40,11 +35,7 @@ jobs:
       - name: Install Node dependencies
         if: ${{ hashFiles('package.json') != '' }}
         run: |
-<<<<<<< Updated upstream
-          if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; else pnpm install --no-frozen-lockfile; fi
-=======
           pnpm install --frozen-lockfile
->>>>>>> Stashed changes
       - name: Install Python dependencies
         if: ${{ hashFiles('pyproject.toml') != '' || hashFiles('requirements.txt') != '' }}
         run: |
@@ -63,11 +54,7 @@ jobs:
           const { execSync } = require('node:child_process');
           const scripts = JSON.parse(readFileSync('package.json', 'utf8')).scripts || {};
           for (const name of ['self-check', 'test', 'typecheck', 'verify']) {
-<<<<<<< Updated upstream
             if (scripts[name]) execSync('pnpm run ' + name, { stdio: 'inherit' });
-=======
-            if (scripts[name]) execSync(`pnpm run ${name}`, { stdio: 'inherit' });
->>>>>>> Stashed changes
           }
           NODE
       - name: Run Python tests
